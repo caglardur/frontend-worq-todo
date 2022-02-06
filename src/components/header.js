@@ -9,7 +9,7 @@ const Header = () => {
         </div>
         <div className="col-auto">
           <Link to="/taskform">
-            <button type="button" className="btn btn-sm bg-danger d-flex justify-content-center align-items-center text-white">
+            <button type="button" className="btn btn-sm bg-danger bg-gradient d-flex justify-content-center align-items-center text-white">
               <i className="col-auto material-icons pe-0" style={{ fontSize: "22px" }}>
                 add
               </i>

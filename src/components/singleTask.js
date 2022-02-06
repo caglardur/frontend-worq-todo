@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import { EditTaskAction } from "../redux/action/taskAction"
 
@@ -20,7 +20,7 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
   const updateMinute = new Date(task.updating_date).getMinutes()
 
   return (
-    <div className="col">
+    <div className="col p-2">
       <div type="button" className="row d-flex justify-content-between align-items-center" onClick={() => (showDetail === task.id ? setShowDetail(null) : setShowDetail(task.id))}>
         <div className="col-auto d-flex justify-content-center">
           {task.is_complated ? (
@@ -40,7 +40,7 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
       {showDetail === task.id && (
         <div className="col">
           <div className="row my-2">
-            <div className="col my-2 text-center">{task.description}</div>
+            <div className="col my-2 text-center py-2 px-5">{task.description}</div>
           </div>
 
           <div className="row align-items-center">

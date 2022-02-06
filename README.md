@@ -2,7 +2,7 @@
 
 ==============
 
-Bu proje bir todo uygulamasıdır. Backend için [backend-worq-todo][backend-worq-todo] kullanılmıştır.
+Bu proje bir todo uygulamasıdır. Backend için [backend-worq-todo](https://github.com/caglardur/backend-worq-todo) kullanılmıştır.
 
 Kullanılan paketler:
 

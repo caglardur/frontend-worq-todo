@@ -1,12 +1,9 @@
 # Frontend for Worq-TODO
 
-==============
-
-Bu proje bir todo uygulamasıdır. Backend için [backend-worq-todo](https://github.com/caglardur/backend-worq-todo) kullanılmıştır.
+Bu proje [React.js](https://reactjs.org/) ile hazırlanmış bir todo uygulamasıdır. Backend için [backend-worq-todo](https://github.com/caglardur/backend-worq-todo) kullanılmıştır.
 
 Kullanılan paketler:
 
-- [React.js](https://reactjs.org/)
 - [Redux](https://react-redux.js.org/)
 - [React Router](https://reactrouter.com/)
 - [Bootstrep](https://getbootstrap.com/)

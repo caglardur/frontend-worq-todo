@@ -41,7 +41,7 @@ const TaskForm = () => {
       <form className="col" onSubmit={formHandler}>
         <div className="col text-center fs-5 fw-bold">{taskId ? "edit task" : "add task"}</div>
         <div className="col mb-2 p-2">
-          <input className="form-control" placeholder="title" id="titleArea" defaultValue={title} onChange={e => setTitle(e.target.value)} required />
+          <input className="form-control" placeholder="title" id="titleArea" defaultValue={title} maxLength={50} onChange={e => setTitle(e.target.value)} required />
         </div>
         <div className="col mb-2 p-2">
           <textarea className="form-control" placeholder="description" id="descriptionArea" style={{ height: "100px" }} defaultValue={description} onChange={e => setDescription(e.target.value)} required />

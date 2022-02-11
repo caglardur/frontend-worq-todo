@@ -31,7 +31,12 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
             <span className="material-icons text-warning">watch_later</span>
           )}
         </div>
-        <div className="col fs-6 fw-bold ps-0">{task.title}</div>
+        <div className="col overflow-auto">
+          <div className="col fs-6 fw-bold ps-0" style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>
+            {task.title}
+          </div>
+        </div>
+
         <div className="col-auto d-flex justify-content-center align-items-center" style={{ fontSize: "11px", color: "grey" }}>
           {taskDay + " " + monthString[taskMonth]}
           <span className="material-icons fs-6 ps-1">today</span>
@@ -40,9 +45,10 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
       {showDetail === task.id && (
         <div className="col">
           <div className="row my-2">
-            <div className="col my-2 text-center py-2 px-5">{task.description}</div>
+            <div className="col my-2 py-2 px-5" style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>
+              {task.description}
+            </div>
           </div>
-
           <div className="row align-items-center">
             <div className="col" style={{ fontSize: "10px", color: "grey" }}>
               <div className="col">CREATED: {taskDay + " " + monthString[taskMonth] + " " + taskYear + " " + taskHour + ":" + taskMinute}</div>

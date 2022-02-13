@@ -1,3 +1,5 @@
+import React from "react"
+
 const Footer = () => {
   return (
     <div className="col p-2 m-2 text-center" style={{ fontSize: "12px" }}>

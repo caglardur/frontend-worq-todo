@@ -17,10 +17,10 @@ export const GetAllTasksAction = () => {
           return 0
         })
         data.sort((a, b) => {
-          if (a.is_complated < b.is_complated) {
+          if (a.is_completed < b.is_completed) {
             return -1
           }
-          if (a.is_complated > b.is_complated) {
+          if (a.is_completed > b.is_completed) {
             return +1
           }
           return 0
@@ -41,16 +41,16 @@ export const AddTaskAction = ({ title, description }) => {
         dispatch(GetAllTasksAction())
       }
     } catch (err) {
-      console.log(err.message)
+      console.log(err)
     }
   }
 }
 
-export const EditTaskAction = ({ taskId, title, description, is_complated }) => {
+export const EditTaskAction = ({ taskId, title, description, is_completed }) => {
   return async dispatch => {
     try {
-      if (is_complated) {
-        const { data } = await axios.put(process.env.REACT_APP_DB_HOST + taskId, { is_complated })
+      if (is_completed) {
+        const { data } = await axios.put(process.env.REACT_APP_DB_HOST + taskId, { is_completed })
         if (data) {
           dispatch(GetAllTasksAction())
         }
@@ -61,7 +61,7 @@ export const EditTaskAction = ({ taskId, title, description, is_complated }) => 
         }
       }
     } catch (err) {
-      console.log(err.message)
+      console.log(err)
     }
   }
 }

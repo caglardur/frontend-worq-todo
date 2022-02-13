@@ -8,6 +8,7 @@ Kullanılan paketler:
 - [React Router](https://reactrouter.com/)
 - [Bootstrep](https://getbootstrap.com/)
 - [Google Font Icon](https://fonts.google.com/icons)
+- [React Moment](https://github.com/headzoo/react-moment#readme)
 
 ## Repository Klonlama
 

@@ -27,8 +27,10 @@ npm install
 
 ## ENV file örneği:
 
+Backend'in çalıştığı portu .env dosyasına eklemeyi unutmayın:
+
 ```bash
-REACT_APP_DB_HOST=
+REACT_APP_DB_HOST = "http://localhost:5050/api/"
 ```
 
 ## Çalıştırma

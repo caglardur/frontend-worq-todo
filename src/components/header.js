@@ -14,7 +14,7 @@ const Header = () => {
               <i className="col-auto material-icons pe-0" style={{ fontSize: "22px" }}>
                 add
               </i>
-              <div className="col">add task</div>
+              <div className="col">NEW TASK</div>
             </button>
           </Link>
         </div>

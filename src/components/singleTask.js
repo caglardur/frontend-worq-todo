@@ -38,8 +38,8 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
               {task.description}
             </div>
           </div>
-          <div className="row align-items-center text-uppercase">
-            <div className="col" style={{ fontSize: "10px", color: "grey" }}>
+          <div className="row align-items-center">
+            <div className="col text-uppercase" style={{ fontSize: "10px", color: "grey" }}>
               <div className="col">
                 CREATED: <Moment date={task.posting_date} format="D MMM YYYY HH:mm" />
               </div>
@@ -53,11 +53,11 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
               {task.is_completed === false && (
                 <div className="col my-2 d-flex justify-content-end">
                   <Link to={"/taskform/" + task.id}>
-                    <button type="button" className="btn btn-sm btn-outline-secondary mx-2 d-flex justify-content-center align-items-center">
+                    <button type="button" className="btn btn-sm btn-outline-secondary mx-2 d-flex justify-content-center align-items-center fw-bold">
                       <span className="material-icons fs-5 fw-bold">edit</span>
                     </button>
                   </Link>
-                  <button type="button" className="btn btn-sm btn-success d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target={"#modal" + task.id}>
+                  <button type="button" className="btn btn-sm btn-outline-success d-flex justify-content-center align-items-center  fw-bold" data-bs-toggle="modal" data-bs-target={"#modal" + task.id}>
                     <span className="material-icons fs-5 fw-bold">done</span>
                   </button>
 

@@ -51,19 +51,19 @@ const TaskForm = () => {
       <form className="col" onSubmit={formHandler}>
         <div className="col text-center fs-5 fw-bold">{taskId ? "edit task" : "add task"}</div>
         <div className="col mb-2 p-2">
-          <input className={invalidTitle ? "form-control is-invalid" : "form-control"} placeholder="title" id="titleArea" defaultValue={title} maxLength={50} onChange={e => setTitle(e.target.value)} required />
+          <input className={invalidTitle ? "form-control is-invalid" : "form-control"} placeholder="title" id="titleArea" value={title || ""} maxLength={50} onChange={e => setTitle(e.target.value)} required />
           <div className="invalid-feedback">Please enter a valid title.</div>
         </div>
         <div className="col mb-2 p-2">
-          <textarea className={invalidDesc ? "form-control is-invalid" : "form-control"} placeholder="description" id="descriptionArea" style={{ height: "100px" }} defaultValue={description} onChange={e => setDescription(e.target.value)} required />
+          <textarea className={invalidDesc ? "form-control is-invalid" : "form-control"} placeholder="description" id="descriptionArea" style={{ height: "100px" }} value={description || ""} onChange={e => setDescription(e.target.value)} required />
           <div className="invalid-feedback">Please enter a valid description.</div>
         </div>
         <div className="col-12 mb-2 p-2 d-flex justify-content-end">
-          <button type="button" className="btn btn-sm btn-secondary mx-2 d-flex justify-content-center align-items-center" onClick={() => navigate("/")}>
-            <span className="material-icons fs-5 fw-bold">clear</span>
+          <button type="button" className="btn btn-sm btn-secondary bg-gradient mx-2 d-flex justify-content-center align-items-center" onClick={() => navigate("/")}>
+            <span className="material-icons fs-5 fw-bold me-1">clear</span>CANCEL
           </button>
-          <button type="submit" className="btn btn-sm btn-primary d-flex justify-content-center align-items-center">
-            <span className="material-icons fs-5 fw-bold">save</span>
+          <button type="submit" className="btn btn-sm btn-primary bg-gradient d-flex justify-content-center align-items-center">
+            <span className="material-icons fs-5 fw-bold me-1">save</span>SAVE
           </button>
         </div>
       </form>

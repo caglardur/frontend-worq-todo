@@ -8,8 +8,6 @@ const TaskList = ({ tasks }) => {
   const [sliceTaskList, setSliceTaskList] = useState(tasks.slice(nowPage * 10, nowPage * 10 + 10))
   const [pages, setPages] = useState(Math.ceil(tasks.length / 10))
 
-  console.log(tasks)
-
   useEffect(() => {
     setSliceTaskList(tasks.slice(nowPage * 10, nowPage * 10 + 10))
     setPages(Math.ceil(tasks.length / 10))

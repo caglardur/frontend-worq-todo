@@ -8,6 +8,8 @@ const TaskForm = () => {
   const [task, setTask] = useState(null)
   const [title, setTitle] = useState(null)
   const [description, setDescription] = useState(null)
+  const [invalidTitle, setInvalidTitle] = useState(false)
+  const [invalidDesc, setInvalidDesc] = useState(false)
   const dispatch = useDispatch()
   const { taskId } = useParams()
   const navigate = useNavigate()
@@ -28,12 +30,20 @@ const TaskForm = () => {
 
   const formHandler = e => {
     e.preventDefault()
-    if (task) {
+    if (title.trim().length === 0) {
+      setInvalidTitle(true)
+    } else if (description.trim().length === 0) {
+      setInvalidDesc(true)
+    } else if (task) {
       dispatch(EditTaskAction({ taskId, title, description }))
       navigate("/")
+      setInvalidTitle(false)
+      setInvalidDesc(false)
     } else {
       dispatch(AddTaskAction({ title, description }))
       navigate("/")
+      setInvalidTitle(false)
+      setInvalidDesc(false)
     }
   }
   return (
@@ -41,10 +51,12 @@ const TaskForm = () => {
       <form className="col" onSubmit={formHandler}>
         <div className="col text-center fs-5 fw-bold">{taskId ? "edit task" : "add task"}</div>
         <div className="col mb-2 p-2">
-          <input className="form-control" placeholder="title" id="titleArea" defaultValue={title} maxLength={50} onChange={e => setTitle(e.target.value)} required />
+          <input className={invalidTitle ? "form-control is-invalid" : "form-control"} placeholder="title" id="titleArea" defaultValue={title} maxLength={50} onChange={e => setTitle(e.target.value)} required />
+          <div className="invalid-feedback">Please enter a valid title.</div>
         </div>
         <div className="col mb-2 p-2">
-          <textarea className="form-control" placeholder="description" id="descriptionArea" style={{ height: "100px" }} defaultValue={description} onChange={e => setDescription(e.target.value)} required />
+          <textarea className={invalidDesc ? "form-control is-invalid" : "form-control"} placeholder="description" id="descriptionArea" style={{ height: "100px" }} defaultValue={description} onChange={e => setDescription(e.target.value)} required />
+          <div className="invalid-feedback">Please enter a valid description.</div>
         </div>
         <div className="col-12 mb-2 p-2 d-flex justify-content-end">
           <button type="button" className="btn btn-sm btn-secondary mx-2 d-flex justify-content-center align-items-center" onClick={() => navigate("/")}>

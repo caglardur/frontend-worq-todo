@@ -44,7 +44,7 @@ const SingleTask = ({ task, showDetail, setShowDetail }) => {
               </div>
               {task.updating_date && (
                 <div className="col">
-                  {task.is_completed ? "COMPLETED: " : "UPDATED"} <Moment date={task.updating_date} format="D MMM YYYY HH:mm" />
+                  {task.is_completed ? "COMPLETE: " : "UPDATED:"} <Moment date={task.updating_date} format="D MMM YYYY HH:mm" />
                 </div>
               )}
             </div>
